@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userbase.AuthWindow">
+
+   <children>
+       <Label fx:id="message" layoutX="230.0" layoutY="26.0" prefHeight="17.0" prefWidth="194.0" text="" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+
+       <Label layoutX="27.0" layoutY="26.0" text="User name:" />
+       <Label layoutX="27.0" layoutY="65.0" text="Password:" />
+
+       <PasswordField fx:id="password" layoutX="95.0" layoutY="61.0" prefHeight="25.0" prefWidth="119.0" />
+       <TextField fx:id="userName" layoutX="95.0" layoutY="22.0" prefHeight="25.0" prefWidth="119.0" />
+
+       <Button layoutX="231.0" layoutY="60.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="25.0" prefWidth="102.0" text="Login" />
+
+      <TableView fx:id="tableUsers" layoutX="14.0" layoutY="111.0" prefHeight="220.0" prefWidth="410.0">
+         <columns>
+            <TableColumn fx:id="idColumn" editable="false" prefWidth="49.0" text="ID" />
+            <TableColumn fx:id="nameColumn" editable="false" prefWidth="124.0" text="Name" />
+            <TableColumn fx:id="passwordColumn" editable="false" prefWidth="124.0" text="Password" />
+            <TableColumn fx:id="dateColumn" editable="false" prefWidth="111.0" text="Reg.date" />
+         </columns>
+      </TableView>
+
+   </children>
+</Pane>

@@ -1,0 +1,87 @@
+
+************** Проект "Такси сервис" *************
+
+Регистрация оператора
+----------------------------
+Реализовать регистрацию пользователя в системе (оператора). Данные об операторах хранятся в базе данных.
+Пользователь вводит:
+- логин (должен быть не менее 4 символов, не должен содержать пробелы)
+- идентификационный номер (10 цифр, без букв и других знаков)
+- пароль (должен быть не менее 8 символов,
+включать большие и маленькие буквы, цифры, должен совпадать с подтверждением)
+- подтверждение пароля
+- пользователь с таким логином должен быть уникальным
+
+AuthorizationService
+boolean register(String login, String id, String pass) throws AuthenticationException
+AuthorizationServiceImpl
+User
+UserDao
+UserDaoImpl
+RegisterServlet
+AuthenticationException
+webapp
+index.jsp
+register.jsp - форма регистрации
+
+
+Регистрация клиентов
+-----------------------------
+Учёт клиентов службы такси. Данные о клиентах хранятся в базе данных.
+
+Функции:
+- зарегистрировать клиента (имя, фамилия, телефон, адрес, сумма, дата последнего заказа)
+- вывести всех клиентов порциями по 10 человек
+- вывести всех клиентов наездивших на сумму больше указанной
+- вывести всех клиентов, делавших заказы за последний месяц
+
+Client
+ClientService
+boolean createClient(String name, String surname, String phone, String address) throws OrderException
+List showClientsByPortion(int portionSize)
+List showClientsGtSum(int sum)
+List showClientsLastMonth()
+ClientServiceImpl
+ClientDao
+ClientDaoImpl
+CreateClientServlet
+PortionClientServlet
+SumClientServlet
+MonthClientServlet
+ClientException
+webapp
+index.jsp
+dashboard.jsp - страница со списком функций (доступна после аутентификации)
+registerClient.jsp - форма создания клиента
+clients.jsp - список клиентов
+
+
+Регистрация заказов
+------------------------------
+Добавить функции работы с заказами такси. Заказы хранятся в базе данных.
+Функции:
+- оформить заказ (дата, клиент, сумма, адрес подачи, адрес назначения)
+- отредактировать заказ (поменять свойства заказа)
+- вывести список заказов на сумму в указанном диапазоне
+- вывести список всех заказов порциями по 5 штук
+
+hw8.taxi.domain.Order
+hw8.taxi.domain.Client
+hw8.taxi.service.OrderService
+boolean createOrder(Client client, Double amount, String addressFrom, String addressTo) throws OrderException
+void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo)
+OrderServiceImpl
+OrderDao
+OrderDaoImpl
+OrderCreateServlet
+OrderEditServlet
+OrderShowServlet
+OrderShowPortionServlet
+OrderException
+webapp
+index.jsp
+dashboard.jsp - страница со списком функций
+order.jsp - форма оформления/редактирования заказа
+orders.jsp - список заказов
+
+​

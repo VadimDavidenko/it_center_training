@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="437.0"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="userbase.UsersWindow">
+
+   <children>
+       <Label fx:id="message" layoutX="236.0" layoutY="28.0" prefHeight="17.0" prefWidth="188.0" text="" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+
+       <Label layoutX="32.0" layoutY="27.0" text="User name:" />
+       <Label layoutX="32.0" layoutY="66.0" text="Password:" />
+       <Label layoutX="32.0" layoutY="106.0" prefHeight="17.0" prefWidth="56.0" text="Reg. date:" />
+
+       <PasswordField fx:id="password" layoutX="97.0" layoutY="62.0" prefHeight="25.0" prefWidth="119.0" />
+       <TextField fx:id="userName" layoutX="97.0" layoutY="23.0" prefHeight="25.0" prefWidth="119.0" />
+       <DatePicker fx:id="regDate" layoutX="97.0" layoutY="102.0" prefHeight="25.0" prefWidth="119.0" />
+
+       <Button layoutX="240.0" layoutY="62.0" mnemonicParsing="false" onAction="#onClickRegistration" prefHeight="25.0" prefWidth="102.0" text="Registration" />
+       <Button layoutX="240.0" layoutY="103.0" mnemonicParsing="false" onAction="#onClickShowList" prefHeight="25.0" prefWidth="102.0" text="Show list" />
+
+       <TableView fx:id="tableUsers" layoutX="13.0" layoutY="155.0" prefHeight="220.0" prefWidth="411.0">
+           <columns>
+               <TableColumn fx:id="idColumn" editable="false" prefWidth="49.0" text="ID" />
+               <TableColumn fx:id="nameColumn" editable="false" prefWidth="124.0" text="Name" />
+               <TableColumn fx:id="passwordColumn" editable="false" prefWidth="124.0" text="Password" />
+               <TableColumn fx:id="dateColumn" editable="false" prefWidth="111.0" text="Reg.date" />
+           </columns>
+       </TableView>
+
+   </children>
+</Pane>
